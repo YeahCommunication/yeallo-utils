@@ -5,11 +5,6 @@ namespace Yeallo;
 abstract class Yeallo {
 
     protected static $baseUrl = 'https://yeallo.fr';
-    protected static $token;
-
-    public function __construct() {
-        self::$token = self::getServer('YEALLOG_TOKEN');
-    }
 
     protected static function call($url, $body) {
         if(self::getServer('ENABLE_YEALLO') === true || self::getServer('ENABLE_YEALLO') == 1 || self::getServer('ENABLE_YEALLO') == 'true') {
@@ -48,5 +43,9 @@ abstract class Yeallo {
 
     protected static function getServer($name) {
         return (isset($_SERVER[$name])) ? $_SERVER[$name] : null;
+    }
+
+    protected static function getToken() {
+        return self::getServer('YEALLOG_TOKEN');
     }
 }

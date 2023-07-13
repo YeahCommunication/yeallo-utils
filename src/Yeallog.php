@@ -24,7 +24,7 @@ class Yeallog extends Yeallo {
             $source = json_encode($source);
         }
 
-        return self::call('/yeallog/save?token=' . self::$token, [
+        return self::call('/yeallog/save?token=' . self::getToken(), [
             'project' => $project,
             'projectTarget' => $projectTarget,
             'type' => $type,

@@ -5,11 +5,11 @@ namespace Yeallo;
 class YealloUtils extends Yeallo {
 
     public static function generateBarCode($text) {
-        return self::$baseUrl . '/generate-bar-code?token='. self::$token .'&text=' . $text;
+        return self::$baseUrl . '/generate-bar-code?token='. self::getToken() .'&text=' . $text;
     }
 
     public static function sendSlack($channel, $text, $from = 'Yeallo', $icon = 'https://yeallo.fr/theme/img/yeallo_mascotte_slack.png') {
-        return self::call('/slack/send?token=' . self::$token, [
+        return self::call('/slack/send?token=' . self::getToken(), [
             'to' => $channel,
             'from' => $from,
             'text' => $text,
