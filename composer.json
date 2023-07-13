@@ -12,7 +12,7 @@
   ],
   "require": {
     "php": "^7.0 || ^8.0",
-    "yeallo/utils": "main@dev",
+    "yeallo/utils": "dev-main",
     "ext-json": "*",
     "ext-mbstring": "*"
   },
