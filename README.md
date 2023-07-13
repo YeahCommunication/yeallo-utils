@@ -3,22 +3,16 @@
 ## Installation
 Pour installer **Yeallo Utils** sur votre projet, suivez la marche à suivre :
 
-1 - Ajouter ceci dans le fichier **composer.json** de votre projet :
+1 - Installer la librairie avec composer :
 ```
-
-
-```
-
-2 - Installer la librairie avec composer :
-```
-composer require yeallo/utils:dev-master
+composer require yeallo/utils
 ```
 
 ## Mise à jour
 
 Mettre à jour la librairie avec composer :
 ```
-composer update yeallo/utils:dev-master
+composer update yeallo/utils
 ```
 
 ## Utilisation
