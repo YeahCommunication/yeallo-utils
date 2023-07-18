@@ -17,15 +17,23 @@ class YealloUtils extends Yeallo {
         ]);
     }
 
-    public static function objectToArray($obj) {
+    public static function objectToArray($obj, &$memo = []) {
+        if (in_array($obj, $memo, true)) {
+            return $obj;
+        }
+
+        $memo[] = $obj;
+
         $obj = (array) $obj;
+
         foreach ($obj as $key => $val) {
             if (is_object($val) || $val instanceof \StdClass || is_array($val)) {
-                $obj[$key] = self::objectToArray($val);
+                $obj[$key] = self::objectToArray($val, $memo);
             } else {
                 $obj[$key] = mb_convert_encoding($val, 'UTF-8', 'UTF-8');
             }
         }
+
         return $obj;
     }
 }
